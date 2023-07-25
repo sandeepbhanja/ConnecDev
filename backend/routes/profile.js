@@ -106,7 +106,7 @@ router.post(
 router.get("/", async (req, res) => {
   try {
     try {
-      const profile = await Profile.find({}).populate("user", "name");
+      const profile = await Profile.find({}).populate("user", ["name","avatar"]);
       res.json(profile);
     } catch (e) {
       console.log(e);
@@ -120,8 +120,7 @@ router.get("/", async (req, res) => {
 // public
 router.get("/user/:id", async (req, res) => {
   try {
-    console.log(id);
-    const profile = await Profile.findOne({ user: id }).populate("user", [
+    const profile = await Profile.findOne({ user: req.user.id }).populate("user", [
       "name",
       "avatar",
     ]);
