@@ -58,6 +58,7 @@ const AuthScreen = () => {
 
   return (
     <>
+      {userInfo && navigate('/chats')}
       <Row className="justify-content-center">
         <Col md={4} className="mx-3">
           <h3 className="text-center">New Here?</h3>

@@ -12,6 +12,7 @@ import {
 
 import AuthScreen from "./screens/AuthScreen";
 import ChatScreen from "./screens/ChatScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 import store from "./store";
 import { Provider } from "react-redux";
@@ -20,7 +21,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<AuthScreen />}></Route>
-      <Route path='/chat' element={<ChatScreen />}></Route>
+      <Route path='/chats' element={<ChatScreen />}></Route>
+      <Route path='/profile' element={<ProfileScreen />}></Route>
     </Route>
   )
 );
